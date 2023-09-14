@@ -11,7 +11,7 @@ from fastapi.responses import HTMLResponse,FileResponse
 anime_router = APIRouter()
 
 
-@anime_router.get("/",tags="Incio",response_class=HTMLResponse)
+@anime_router.get("/",tags=["Inicio"],response_class=HTMLResponse)
 def root():
     html_file_address = "./public/html/index.html"
     return FileResponse(html_file_address,status_code=200)
