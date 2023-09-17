@@ -7,19 +7,16 @@ from config.database import Session
 from fastapi.encoders import jsonable_encoder
 from schemas.AnimeSchema import Anime
 from services.anime import AnimeServices
-from fastapi.responses import HTMLResponse,FileResponse
+
+
 anime_router = APIRouter()
 
 
-@anime_router.get("/",tags=["Inicio"],response_class=HTMLResponse)
-def root():
-    html_file_address = "./public/html/index.html"
-    return FileResponse(html_file_address,status_code=200)
 
 @anime_router.get("/animes",tags=["Json Preview"],response_model=List[Anime],dependencies=[Depends(JTWBearer())])
 def preview() -> List[Anime]:
     db = Session()
-    get_all_data = AnimeServices(db).get_movies()
+    get_all_data = AnimeServices(db).get_animes()
     return JSONResponse(content=jsonable_encoder
 (get_all_data),status_code=200)
 

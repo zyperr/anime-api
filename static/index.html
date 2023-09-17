@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Api</title>
+    <link rel="stylesheet" type="text/css" href="./static/base/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;800&family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__container">
+          <li class="nav__list-item">
+            <span class="get-color">GET</span> Methods
+            <div class="nav__methods-container">
+              <p><span class="get-color">GET</span> Animes</p>
+              <p><span class="get-color">GET</span> By id</p>
+              <p><span class="get-color">GET</span> By genres</p>
+            </div>
+          </li>
+          <li class="nav__list-item">
+            <span class="put-color">PUT</span> Methods
+            <div class="nav__methods-container">
+              <p><span class="put-color">PUT</span> anime</p>
+            </div>
+          </li>
+          <li class="nav__list-item">
+            <span class="delete-color">DELETE</span> Methods
+            <div class="nav__methods-container">
+              <p><span class="delete-color">DELETE</span> anime</p>
+            </div>
+          </li>
+          <li class="nav__list-item">
+            <span class="post-color">POST</span> Methods
+            <div class="nav__methods-container">
+              <p><span class="post-color">POST</span> anime</p>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="hero__container">
+        <h1 class="hero__title">Welcome to AnimeAPI</h1>
+        <p class="hero__description">
+          With an anime API, you can access to a lot information about anime
+          including titles, synopsis, number of episodes,front page image, and
+          more. You can use this information to create your own anime apps and
+          websites, or to simply learn more about your favorite anime.
+        </p>
+      </section>
+      <section class="endpoints__container">
+        <article>
+          <h3 class="endpoints__title">
+            GET Animes <span class="endpoint">/animes</span>
+          </h3>
+          <div class="endpoints__response-container">
+            <pre class="endpoints__json">
+              <code language="json" style="color: #f1f1f1;">
+                [  
+                  {  
+                    "id":1,
+                    "anime_name": "ONE PIECE",    
+                    "rate": 4.9,    
+                    "synopsis": "... A large text",    
+                    "reviews": 785,    
+                    "editor": "Toei Animation",    
+                    "episodes": 1075,    
+                    "genres": "action adventure fantasy shounen",    
+                    "aired": true,    
+                    "year_release": 1999,    
+                    "images": "https://i.imgur.com/HJd2iHi.jpg”  
+                  },
+                  {  
+                    "id":2,
+                    "anime_name": "MASHLE: MAGIC AND MUSCLES",    
+                    "rate": 4.8,
+                    "synopsis": "... A large text",    
+                    "reviews": 100,
+                    "editor": "Aniplex of America",    
+                    "episodes":  12,
+                    "genres": "comedy fantasy shounen",    
+                    "aired": false,    
+                    "year_release": 2023,    
+                    "images": "https://i.imgur.com/Sxw2ERv.jpg”  
+                  }
+                  {  
+                    "id":3,
+                    "anime_name": "Chainsaw Man",    
+                    "rate": 4.9,
+                    "synopsis": "...A large text",    
+                    "reviews": 780,
+                    "editor": "MAPPA",    
+                    "episodes":  12,
+                    "genres": "action shounen supernatural",    
+                    "aired": false,    
+                    "year_release": 2022,    
+                    "images": "https://i.imgur.com/db6aBX6.jpg”
+                  },
+                  {  
+                    "id":4,
+                    "anime_name": "Chainsaw Man",    
+                    "rate": 4.9,
+                    "synopsis": "...A large text",    
+                    "reviews": 780,
+                    "editor": "MAPPA",    
+                    "episodes":  12,
+                    "genres": "action shounen supernatural",    
+                    "aired": false,    
+                    "year_release": 2022,    
+                    "images": "https://i.imgur.com/db6aBX6.jpg”
+                  }
+                ]
+                and more
+                </code>
+              </pre>
+            <span class="arrow">
+              <svg
+                width="118"
+                height="24"
+                viewBox="0 0 118 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="Arrow 1"
+                  d="M117.069 13.0607C117.655 12.4749 117.655 11.5251 117.069 10.9393L107.523 1.3934C106.938 0.807611 105.988 0.807611 105.402 1.3934C104.816 1.97919 104.816 2.92893 105.402 3.51472L113.887 12L105.402 20.4853C104.816 21.0711 104.816 22.0208 105.402 22.6066C105.988 23.1924 106.938 23.1924 107.523 22.6066L117.069 13.0607ZM0.991302 13.5H116.009V10.5H0.991302V13.5Z"
+                  fill="#0F9EEF"
+                  fill-opacity="0.7"
+                />
+              </svg>
+            </span>
+            <div class="endpoint__response-example">
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1347/117616.jpg"
+                  alt="osama rankin"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">Ousama rankin</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">23</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired false"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1806/126216.jpg"
+                  alt="chainsaw man"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">Chainsaw Man</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">12</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired false"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1218/135107.jpg"
+                  alt="mashle"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">MASHLE</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">12</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired false"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1384/136408.jpg"
+                  alt="Zom 100"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">Zom 100</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">12</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired true"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://i.pinimg.com/originals/04/65/2b/04652b44ea7c1275d1022d98d59ecc97.jpg"
+                  alt="ONE PIECE"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">One Piece</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">1076</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired true"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1908/135431.jpg"
+                  alt="Bleach: Sennen Kessen-hen"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">Bleach</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">23</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired true"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1599/136532.jpg"
+                  alt="Rurouni Kenshin: Meiji Kenkaku Romantan (2023)"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">Rurouni Kenshin (2023)</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">10</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired true"></i>
+              </div>
+              <div class="endpoint__image-container">
+                <div class="dark"></div>
+                <img
+                  src="https://cdn.myanimelist.net/images/anime/1261/127311.jpg"
+                  alt="Lycoris Recoil"
+                />
+                <div class="endpoint__info">
+                  <p class="endpoint__anime">Lycoris Recoil</p>
+                  <p class="endpoint__episodes">
+                    Episodes <span class="endpoint__number">13</span>
+                  </p>
+                </div>
+                <i class="endpoint__aired false"></i>
+              </div>
+            </div>
+          </div>
+        </article>
+        <h3 class="endpoints__title">
+          GET Anime by ID<span class="endpoint">/animes/1</span>
+        </h3>
+      </section>
+    </main>
+    <script></script>
+    <script type="module" src="static/js/main.js"></script>
+  </body>
+</html>
