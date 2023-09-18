@@ -39,6 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: fixed;
 }
 .nav__list-item {
   color: var(--color-text);
