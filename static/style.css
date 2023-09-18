@@ -72,6 +72,7 @@ body {
   grid-area: 1 / 2 / 6 / 6;
   display: flex;
   flex-flow: column nowrap;
+  padding-left: 30px
 }
 
 .hero__container {
