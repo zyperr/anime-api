@@ -62,80 +62,6 @@
             GET Animes <span class="endpoint">/animes</span>
           </h3>
           <div class="endpoints__response-container">
-            <pre class="endpoints__json">
-              <code language="json" style="color: #f1f1f1;">
-                [  
-                  {  
-                    "id":1,
-                    "anime_name": "ONE PIECE",    
-                    "rate": 4.9,    
-                    "synopsis": "... A large text",    
-                    "reviews": 785,    
-                    "editor": "Toei Animation",    
-                    "episodes": 1075,    
-                    "genres": "action adventure fantasy shounen",    
-                    "aired": true,    
-                    "year_release": 1999,    
-                    "images": "https://i.imgur.com/HJd2iHi.jpg”  
-                  },
-                  {  
-                    "id":2,
-                    "anime_name": "MASHLE: MAGIC AND MUSCLES",    
-                    "rate": 4.8,
-                    "synopsis": "... A large text",    
-                    "reviews": 100,
-                    "editor": "Aniplex of America",    
-                    "episodes":  12,
-                    "genres": "comedy fantasy shounen",    
-                    "aired": false,    
-                    "year_release": 2023,    
-                    "images": "https://i.imgur.com/Sxw2ERv.jpg”  
-                  }
-                  {  
-                    "id":3,
-                    "anime_name": "Chainsaw Man",    
-                    "rate": 4.9,
-                    "synopsis": "...A large text",    
-                    "reviews": 780,
-                    "editor": "MAPPA",    
-                    "episodes":  12,
-                    "genres": "action shounen supernatural",    
-                    "aired": false,    
-                    "year_release": 2022,    
-                    "images": "https://i.imgur.com/db6aBX6.jpg”
-                  },
-                  {  
-                    "id":4,
-                    "anime_name": "Chainsaw Man",    
-                    "rate": 4.9,
-                    "synopsis": "...A large text",    
-                    "reviews": 780,
-                    "editor": "MAPPA",    
-                    "episodes":  12,
-                    "genres": "action shounen supernatural",    
-                    "aired": false,    
-                    "year_release": 2022,    
-                    "images": "https://i.imgur.com/db6aBX6.jpg”
-                  }
-                ]
-                and more
-                </code>
-              </pre>
-            <span class="arrow">
-              <svg
-                width="118"
-                height="24"
-                viewBox="0 0 118 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  id="Arrow 1"
-                  d="M117.069 13.0607C117.655 12.4749 117.655 11.5251 117.069 10.9393L107.523 1.3934C106.938 0.807611 105.988 0.807611 105.402 1.3934C104.816 1.97919 104.816 2.92893 105.402 3.51472L113.887 12L105.402 20.4853C104.816 21.0711 104.816 22.0208 105.402 22.6066C105.988 23.1924 106.938 23.1924 107.523 22.6066L117.069 13.0607ZM0.991302 13.5H116.009V10.5H0.991302V13.5Z"
-                  fill="#0F9EEF"
-                  fill-opacity="0.7"
-                />
-              </svg>
             </span>
             <div class="endpoint__response-example">
               <div class="endpoint__image-container">
@@ -197,7 +123,7 @@
               <div class="endpoint__image-container">
                 <div class="dark"></div>
                 <img
-                  src="https://i.pinimg.com/originals/04/65/2b/04652b44ea7c1275d1022d98d59ecc97.jpg"
+                  src="./static/ONE-PIECE-Volume-100-Shueisha.jpg"
                   alt="ONE PIECE"
                 />
                 <div class="endpoint__info">
@@ -253,9 +179,33 @@
             </div>
           </div>
         </article>
-        <h3 class="endpoints__title">
-          GET Anime by ID<span class="endpoint">/animes/1</span>
-        </h3>
+        <article>
+          <h3 class="endpoints__title">
+            GET Anime by ID<span class="endpoint">/animes/1</span>
+          </h3>
+          <div class="card">
+              <img src="./static/ONE-PIECE-Volume-100-Shueisha.jpg" alt="ONE PIECE">
+              <div>
+                <h3 class="card__title">ONE PIECE</h3>
+                <span class="card__info-container">
+                  <p>Toei Animation</p>
+                  <p>reviews 785</p>
+                  <p>rate 4.9</p>
+                  <p class="card__inbroadcast">in broadcast</p>
+                </span>
+                <div class="card__tags-container">
+                  <span class="card__tags">action</span>
+                  <span class="card__tags">shounen</span>
+                  <span class="card__tags">adventure</span>
+                  <span class="card__tags">fantasy</span>
+                </div>
+                <h2 class="card__subtitle">Synopsis</h2>
+                <p class="card__synopsis">
+                  One Piece is the story of a boy named Monkey D. Luffy, who was inspired by Shanks, a pirate who saved his life, to become the King of the Pirates. At the beginning of the series, twenty-four years before the current story, a pirate named Gol D. Roger discovered the legendary One Piece treasure, and declared that anyone was free to take it. This sparked a new age of piracy, and Luffy set out to find the One Piece and become the new King of the Pirates.
+                </p>
+              </div>
+          </div>
+        </article>
       </section>
     </main>
     <script></script>

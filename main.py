@@ -8,7 +8,6 @@ from fastapi.staticfiles import StaticFiles
 
 
 
-
 app = FastAPI()
 app.title = "Aplicacion con FastAPI"
 app.version = "0.0.1"
