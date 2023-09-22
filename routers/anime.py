@@ -13,7 +13,7 @@ anime_router = APIRouter()
 
 
 
-@anime_router.get("/animes",tags=["Json Preview"],response_model=List[Anime],dependencies=[Depends(JTWBearer())])
+@anime_router.get("/",tags=["Json Preview"],response_model=List[Anime])
 def preview() -> List[Anime]:
     db = Session()
     get_all_data = AnimeServices(db).get_animes()
@@ -48,7 +48,7 @@ async def create_anime(anime: Anime) -> dict:
 
 
 #* PUT
-@anime_router.put("/anime/{anime_id}",tags=["Update anime"],response_model=dict)
+@anime_router.put("/anime/{anime_id}",tags=["Update anime"],response_model=dict,dependencies=[Depends(JTWBearer())])
 def update_anime(anime_id:int,anime:Anime) -> dict:
         db = Session()
         update_result = AnimeServices(db).get_anime_by_id(anime_id)
