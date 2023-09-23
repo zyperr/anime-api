@@ -11,7 +11,7 @@ class Anime(BaseModel):
     reviews:Optional[int]
     editor:str
     episodes:Optional[int]
-    genres:str = Field(default="accion aventura",min_length=1)
+    genres:str = Field(default="action-adventure",min_length=1)
     aired:bool
     year_release:Optional[int] = Field(default=datetime.date.today().year,le=datetime.date.today().year)
     images:str = Field(default="Url images",min_length=1)
@@ -19,13 +19,13 @@ class Anime(BaseModel):
     class Config:
         schema_extra = {
             "example":{
-                "anime_name":"Tu anime",
+                "anime_name":"Anime name",
                 "rate":1.9,
-                "synopsis":"Una synopsis",
+                "synopsis":"Synopsis go here",
                 "reviews":310,
                 "editor":"Toei Animation",
                 "episodes":1,
-                "genres":"comedia aventura",
+                "genres":"comedia-aventura",
                 "aired":False,
                 "year-release":datetime.date.today().year,
                 "images":"www.url-images.jpg"

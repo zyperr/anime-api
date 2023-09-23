@@ -13,7 +13,7 @@ anime_router = APIRouter()
 
 
 
-@anime_router.get("/",tags=["Json Preview"],response_model=List[Anime])
+@anime_router.get("/",tags=["Get animes"],response_model=List[Anime])
 def preview() -> List[Anime]:
     db = Session()
     get_all_data = AnimeServices(db).get_animes()
@@ -21,7 +21,7 @@ def preview() -> List[Anime]:
 (get_all_data),status_code=200)
 
 
-@anime_router.get("/anime/{anime_id}",tags=["Filter Animes"],response_model=Anime)
+@anime_router.get("/anime/{anime_id}",tags=["Get Anime"],response_model=Anime)
 def anime_by_id(anime_id:int = Path(ge=1,le=2000)) -> Anime:
     db = Session()
     result_id = AnimeServices(db).get_anime_by_id(anime_id)
@@ -29,10 +29,10 @@ def anime_by_id(anime_id:int = Path(ge=1,le=2000)) -> Anime:
         return JSONResponse(status_code=404,content={'message':"Animes not found"})
     return JSONResponse(status_code=200,content=jsonable_encoder(result_id))
 
-@anime_router.get("/animes/",tags=["Filter Animes"],response_model=List[Anime])
-def anime_by_category(genre:str) -> List[Anime]:
+@anime_router.get("/animes/",tags=["Get by query"],response_model=List[Anime])
+def anime_by_query(genre:str = "",year:int = None) -> List[Anime]:
     db = Session()
-    result_by_query  = AnimeServices(db).get_anime_by_genre(genre)
+    result_by_query  = AnimeServices(db).get_anime_by_query(genre,year)
     if not result_by_query:
         return JSONResponse(content={"message":"anime by category not found"},status_code=404)
     return JSONResponse(status_code=200,content=jsonable_encoder(result_by_query)) 

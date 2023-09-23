@@ -14,15 +14,22 @@ class AnimeServices():
         result = self.db.query(Anime_Model).filter(Anime_Model.id == anime_id).first()
         return result
     
-    def get_anime_by_genre(self,genre):
-        result = self.db.query(Anime_Model).filter(Anime_Model.genres.contains(genre)).all()
+    def get_anime_by_query(self,genre,year):
+        if genre != "":
+            result = self.db.query(Anime_Model).filter(Anime_Model.genres.contains(genre)).all()
+        elif year is not None:
+            result = self.db.query(Anime_Model).filter(Anime_Model.year_release == year).all()
+
+        if genre != "" and year is not None:
+            result = self.db.query(Anime_Model).filter(Anime_Model.genres.contains(genre),Anime_Model.year_release == year).all()
+        
         return result
     
     def create_anime(self,anime:Anime):
         new_anime = Anime_Model(**anime.model_dump())
         self.db.add(new_anime)
         self.db.commit()
-
+    
     def update_anime(self,anime_id:int,data:Anime):
         anime = self.get_anime_by_id(anime_id)
 
